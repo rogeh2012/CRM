@@ -42,3 +42,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [CustomerController::class,'index'])->name('customers.index')->middleware('auth');
 Route::get('/denied', [HomeController::class,'denied']);
+Route::get('/register', [HomeController::class,'denied']);
