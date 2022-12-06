@@ -15,14 +15,18 @@ class CustomerController extends Controller
         return view('customers.index', ['customers' => $allCustomers]);
     }
 
-
+    //=================Create==================
     public function create()
     {
+        //admin role == 1
+        //employee role == 0
+
         $emps = User::where("role", 0)->get();
 
         return view('customers.create', ['emps' => $emps]);
     }
 
+    //=================store==================
 
     public function store()
     {
@@ -41,6 +45,8 @@ class CustomerController extends Controller
 
         return redirect('/customers');
     }
+        //=================edit==================
+
     public function edit($customerId)
     {
         $emps = User::where("role", 0)->get();
@@ -49,6 +55,8 @@ class CustomerController extends Controller
         // dd($customerId);
         return view('customers.edit', ['customerId' => $customerId, 'customer' => $customer,'emps' => $emps]);
     }
+
+        //=================update==================
 
     public function update($customerId)
     {

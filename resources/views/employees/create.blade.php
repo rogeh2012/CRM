@@ -2,6 +2,8 @@
 
 @section('content')
 
+    {{-- ============validation alert============= --}}
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -11,6 +13,10 @@
         </ul>
     </div>
 @endif
+
+    {{-- ============Creating new employee============= --}}
+
+
     </header>
     <form action="{{ route('employees.store') }}" method="POST" class=" container w-75 m-5">
         @csrf

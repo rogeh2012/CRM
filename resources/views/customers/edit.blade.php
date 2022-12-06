@@ -2,6 +2,8 @@
 @section('content')
 
 
+{{-- ============Adding Actions to customers============= --}}
+
     </header>
 
     <form action="{{ route('customers.update', $customer->id) }}" method="post" class=" container w-75 m-5">
@@ -39,6 +41,8 @@
                 </select>
             </div>
         </div>
+
+        {{-- ============Assigning customers to employees============= --}}
 
         <div class="row">
             <label for="colFormLabel" class="col-sm-2 col-form-label">Customer Assigned to</label>

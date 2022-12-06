@@ -19,10 +19,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
+//================Employees Routes ======================
 
 Route::get('employees', [EmployeeController::class, 'index'])->name('employees.index')->middleware('auth')->middleware('isAdmin');
 Route::get('employees/create', [EmployeeController::class, 'create'])->name('employees.create')->middleware('auth')->middleware('isAdmin');
@@ -30,12 +28,18 @@ Route::post('/employees/store', [EmployeeController::class, 'store'])->name('emp
 // Route::get('/employees/{employee}', [EmployeeController::class, 'show'])->name('employees.show')->middleware('auth')->middleware('isAdmin');
 
 
+//================Customers Routes ======================
 
 Route::get('/customers', [CustomerController::class,'index'])->name('customers.index')->middleware('auth');
 Route::get('/customers/create', [CustomerController::class,'create'])->name('customers.create')->middleware('auth');
 Route::post('/customers/store', [CustomerController::class,'store'])->name('customers.store')->middleware('auth');
 Route::get('/customers/{post}/edit', [CustomerController::class,'edit'])->name('customers.edit')->middleware('auth');
 Route::put('/customers/{post}', [CustomerController::class,'update'])->name('customers.update')->middleware('auth');
+
+
+
+
+
 
 Auth::routes();
 

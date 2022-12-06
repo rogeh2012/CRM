@@ -11,16 +11,22 @@ class EmployeeController extends Controller
 {
     public function index()
     {
+        //admin role == 1
+        //employee role == 0
+
         $allEmps = User::where("role", 0)->get();
 
         return view('employees.index', ['emps' => $allEmps]);
     }
 
+    //=================Create==================
 
     public function create()
     {
         return view('employees.create');
     }
+
+    //=================store==================
 
     public function store()
     {

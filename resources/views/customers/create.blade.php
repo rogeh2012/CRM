@@ -1,15 +1,20 @@
 @extends('layouts.app')
 @section('content')
 
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+    {{-- ============validation alert============= --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
+    {{-- ============Creating new customer============= --}}
+
     </header>
     <form action="{{ route('customers.store') }}" method="POST" class=" container w-75 m-5">
         @csrf
@@ -25,6 +30,9 @@
                 <input type="text" name="lname" class="form-control form-control-lg" id="colFormLabelLg">
             </div>
         </div>
+
+
+        {{-- ============Assigning customer to employee============= --}}
 
         <div class="row">
             <label for="colFormLabelLg" class="col-sm-2 col-form-label ">Assigned to Employee:</label>
